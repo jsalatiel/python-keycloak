@@ -1468,7 +1468,14 @@ class KeycloakAdmin:
         params_path = {"realm-name": self.realm_name, "id": config_id}
         data_raw = self.raw_get(URL_ADMIN_AUTHENTICATOR_CONFIG.format(**params_path))
         return raise_error_from_response(data_raw, KeycloakGetError)
+    
+    def create_authenticator_config(self, payload, config_id , skip_exists=False):
 
+        params_path = {"realm-name": self.realm_name,  "id": config_id}
+        data_raw = self.raw_post(URL_ADMIN_AUTHENTICATOR_CONFIG_CREATE.format(**params_path),
+                                 data=payload)
+        return raise_error_from_response(data_raw, KeycloakGetError, expected_codes=[201], skip_exists=skip_exists)
+    
     def update_authenticator_config(self, payload, config_id):
         """
         Update an authenticator configuration.
