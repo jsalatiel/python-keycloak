@@ -1473,7 +1473,7 @@ class KeycloakAdmin:
 
         params_path = {"realm-name": self.realm_name,  "id": config_id}
         data_raw = self.raw_post(URL_ADMIN_AUTHENTICATOR_CONFIG_CREATE.format(**params_path),
-                                 data=payload)
+                                 data==json.dumps(payload))
         return raise_error_from_response(data_raw, KeycloakGetError, expected_codes=[201], skip_exists=skip_exists)
     
     def update_authenticator_config(self, payload, config_id):
