@@ -98,6 +98,8 @@ URL_ADMIN_FLOWS_EXECUTIONS = "admin/realms/{realm-name}/authentication/flows/{fl
 URL_ADMIN_FLOWS_EXECUTIONS_EXEUCUTION = "admin/realms/{realm-name}/authentication/flows/{flow-alias}/executions/execution"
 URL_ADMIN_FLOWS_EXECUTIONS_FLOW = "admin/realms/{realm-name}/authentication/flows/{flow-alias}/executions/flow"
 URL_ADMIN_AUTHENTICATOR_CONFIG = "admin/realms/{realm-name}/authentication/config/{id}"
+URL_ADMIN_AUTHENTICATOR_CONFIG_CREATE = "admin/realms/{realm-name}/authentication/executions/{id}/config"
+
 
 URL_ADMIN_COMPONENTS = "admin/realms/{realm-name}/components"
 URL_ADMIN_COMPONENT = "admin/realms/{realm-name}/components/{component-id}"
